@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Star, Zap, Crown, Users, Truck, BarChart3, Shield, Clock } from 'lucide-react';
+import { Check, Star, Zap, Crown, Users, Bike, BarChart3, Shield, Clock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Pricing: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const navigate = useNavigate();
 
   const plans = [
     {
@@ -74,7 +76,7 @@ const Pricing: React.FC = () => {
   ];
 
   const features = [
-    { icon: Truck, text: 'Rastreamento GPS em tempo real' },
+    { icon: Bike, text: 'Rastreamento GPS em tempo real' },
     { icon: BarChart3, text: 'Relatórios e analytics completos' },
     { icon: Shield, text: 'Segurança e backup de dados' },
     { icon: Clock, text: 'Suporte técnico especializado' }
@@ -214,6 +216,7 @@ const Pricing: React.FC = () => {
                         ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg'
                         : 'bg-white text-orange-600 border-2 border-orange-500 hover:bg-orange-500 hover:text-white'
                     }`}
+                    onClick={() => navigate('/construction')}
                   >
                     {plan.name === 'Enterprise' ? 'Falar com Vendas' : 'Começar Agora'}
                   </motion.button>

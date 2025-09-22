@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Truck, 
   Mail, 
   Phone, 
   MapPin, 
@@ -67,9 +66,10 @@ const Footer: React.FC = () => {
             >
               {/* Logo */}
               <div className="flex items-center space-x-3">
-                <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-xl">
-                  <Truck className="h-8 w-8 text-white" />
-                </div>
+                <svg className="h-10 w-10" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 2 C25 2 10 22 10 45 C10 60 25 85 50 98 C75 85 90 60 90 45 C90 22 75 2 50 2 Z M30 70 L50 30 L70 70 H55 L50 60 L45 70 H30Z" fill="#F97316"/>
+                  <path d="M25 50 Q 50 40 75 50" stroke="#FFFFFF" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                </svg>
                 <span className="text-2xl font-bold">MOTOROTAS</span>
               </div>
 
@@ -87,11 +87,11 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Phone className="h-5 w-5 text-orange-500" />
-                  <span>(11) 99999-9999</span>
+                  <span>(47) 99130-6846</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <MapPin className="h-5 w-5 text-orange-500" />
-                  <span>São Paulo, SP - Brasil</span>
+                  <span>Joinville, SC - Brasil</span>
                 </div>
               </div>
 

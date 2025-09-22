@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Truck, MapPin, Clock, ArrowRight, Star, Users, Zap } from 'lucide-react';
+import { MapPin, Clock, ArrowRight, Star, Users, Zap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
+  
   const stats = [
     { icon: Users, value: '500+', label: 'Lanchonetes Ativas' },
-    { icon: Truck, value: '10K+', label: 'Entregas/Mês' },
+    { icon: MapPin, value: '10K+', label: 'Entregas/Mês' },
     { icon: Star, value: '4.9', label: 'Avaliação Média' },
     { icon: Zap, value: '30%', label: 'Mais Eficiência' },
   ];
@@ -61,7 +64,10 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <button className="btn-primary flex items-center justify-center space-x-2">
+              <button 
+                className="btn-primary flex items-center justify-center space-x-2"
+                onClick={() => navigate('/construction')}
+              >
                 <span>Começar Gratuitamente</span>
                 <ArrowRight className="h-5 w-5" />
               </button>
@@ -112,9 +118,10 @@ const Hero: React.FC = () => {
                 {/* Header */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="bg-orange-500 p-2 rounded-lg">
-                      <Truck className="h-6 w-6 text-white" />
-                    </div>
+                    <svg className="h-8 w-8" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M50 2 C25 2 10 22 10 45 C10 60 25 85 50 98 C75 85 90 60 90 45 C90 22 75 2 50 2 Z M30 70 L50 30 L70 70 H55 L50 60 L45 70 H30Z" fill="#F97316"/>
+                      <path d="M25 50 Q 50 40 75 50" stroke="#FFFFFF" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                    </svg>
                     <span className="text-xl font-bold text-gray-900">MOTOROTAS</span>
                   </div>
                   <div className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-semibold">
@@ -166,9 +173,12 @@ const Hero: React.FC = () => {
             <motion.div
               animate={{ y: [-15, 15, -15] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -top-4 -right-4 bg-orange-500 text-white p-3 rounded-full shadow-lg"
+              className="absolute -top-4 -right-4 bg-white p-3 rounded-full shadow-lg"
             >
-              <Truck className="h-6 w-6" />
+              <svg className="h-6 w-6" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 2 C25 2 10 22 10 45 C10 60 25 85 50 98 C75 85 90 60 90 45 C90 22 75 2 50 2 Z M30 70 L50 30 L70 70 H55 L50 60 L45 70 H30Z" fill="#F97316"/>
+                <path d="M25 50 Q 50 40 75 50" stroke="#FFFFFF" strokeWidth="8" fill="none" strokeLinecap="round"/>
+              </svg>
             </motion.div>
 
             <motion.div

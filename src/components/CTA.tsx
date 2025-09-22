@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Clock, Users, Zap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const CTA: React.FC = () => {
+  const navigate = useNavigate();
   const benefits = [
     { icon: Clock, text: 'Setup em 15 minutos' },
     { icon: Users, text: 'Suporte especializado' },
@@ -93,6 +95,7 @@ const CTA: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="btn-primary text-xl px-12 py-5 flex items-center justify-center space-x-3"
+                    onClick={() => navigate('/construction')}
                   >
                     <span>Começar Teste Gratuito</span>
                     <ArrowRight className="h-6 w-6" />

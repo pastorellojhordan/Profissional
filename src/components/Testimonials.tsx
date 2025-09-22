@@ -1,14 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote, MapPin, Users, TrendingUp } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Testimonials: React.FC = () => {
+  const navigate = useNavigate();
   const testimonials = [
     {
       name: 'Carlos Silva',
       role: 'Proprietário',
       business: 'Lanchonete do Carlos',
-      location: 'São Paulo, SP',
+      location: 'Joinville, SC',
       rating: 5,
       text: 'O MOTOROTAS transformou completamente nossa operação. Agora conseguimos atender muito mais clientes e nossos entregadores são muito mais eficientes. A satisfação dos clientes aumentou drasticamente!',
       avatar: 'CS',
@@ -206,7 +208,10 @@ const Testimonials: React.FC = () => {
               para revolucionar suas entregas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary text-lg px-8 py-4">
+              <button 
+                className="btn-primary text-lg px-8 py-4"
+                onClick={() => navigate('/construction')}
+              >
                 Começar Teste Gratuito
               </button>
               <button className="btn-secondary text-lg px-8 py-4">

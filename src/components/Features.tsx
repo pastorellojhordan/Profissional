@@ -14,8 +14,10 @@ import {
   Smartphone as Mobile,
   Headphones
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Features: React.FC = () => {
+  const navigate = useNavigate();
   const features = [
     {
       icon: MapPin,
@@ -203,7 +205,10 @@ const Features: React.FC = () => {
             <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
               Junte-se a centenas de lanchonetes que já transformaram suas operações com o MOTOROTAS.
             </p>
-            <button className="btn-primary">
+            <button 
+              className="btn-primary"
+              onClick={() => navigate('/construction')}
+            >
               Começar Teste Gratuito
             </button>
           </div>

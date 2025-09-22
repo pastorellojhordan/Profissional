@@ -7,11 +7,13 @@ import {
   CheckCircle, 
   ArrowRight,
   Clock,
-  Truck,
+  Bike,
   Star
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const HowItWorks: React.FC = () => {
+  const navigate = useNavigate();
   const steps = [
     {
       icon: UserPlus,
@@ -49,7 +51,7 @@ const HowItWorks: React.FC = () => {
 
   const benefits = [
     { icon: Clock, text: 'Setup em menos de 15 minutos' },
-    { icon: Truck, text: 'Suporte a múltiplos entregadores' },
+    { icon: Bike, text: 'Suporte a múltiplos entregadores' },
     { icon: Star, text: 'Interface amigável e intuitiva' },
     { icon: CheckCircle, text: 'Sem necessidade de conhecimento técnico' }
   ];
@@ -182,7 +184,10 @@ const HowItWorks: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mt-12"
             >
-              <button className="btn-primary text-lg px-12 py-4">
+              <button 
+                className="btn-primary text-lg px-12 py-4"
+                onClick={() => navigate('/construction')}
+              >
                 Começar Agora - É Grátis!
               </button>
               <p className="text-gray-500 text-sm mt-4">

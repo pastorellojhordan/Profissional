@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Truck, MapPin, Clock } from 'lucide-react';
+import { Menu, X, MapPin, Clock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,9 +41,10 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2"
           >
-            <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-xl">
-              <Truck className="h-8 w-8 text-white" />
-            </div>
+            <svg className="h-12 w-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 2 C25 2 10 22 10 45 C10 60 25 85 50 98 C75 85 90 60 90 45 C90 22 75 2 50 2 Z M30 70 L50 30 L70 70 H55 L50 60 L45 70 H30Z" fill="#F97316"/>
+              <path d="M25 50 Q 50 40 75 50" stroke="#FFFFFF" strokeWidth="8" fill="none" strokeLinecap="round"/>
+            </svg>
             <span className="text-2xl font-bold text-gradient">MOTOROTAS</span>
           </motion.div>
 
@@ -70,6 +73,7 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="hidden md:block btn-primary"
+            onClick={() => navigate('/construction')}
           >
             Começar Agora
           </motion.button>
@@ -104,7 +108,10 @@ const Header: React.FC = () => {
                 {item.name}
               </a>
             ))}
-            <button className="w-full btn-primary mt-4">
+            <button 
+              className="w-full btn-primary mt-4"
+              onClick={() => navigate('/construction')}
+            >
               Começar Agora
             </button>
           </div>
